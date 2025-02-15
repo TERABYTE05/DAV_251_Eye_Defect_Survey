@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+    <title>Eye Defects Survey Insights</title>
+    <style>
+        body {
+            font-family: 'Poiret One';
+            margin: 0px;
+            padding: 10px;
+            /* background-image: url("back.jpg"); */
+            /* background-size: cover;
+            background-position: center; */
+            text-align: justify;
+            background-color: #b8bcb3;
+            /* background-color: #efd0af; */
+        }
+        body h1 {
+            font-size: 50px;
+        }
+        p{
+            background-color: white;
+            margin: 0;
+            padding: 0;
+            text-align: justify;
+        }
+        img {
+           width: 100%; /* Make image responsive */
+           max-width: 500px; /* Set a maximum width */
+           height: auto; /* Maintain aspect ratio */
+           border-radius: 10px; /* Rounded corners */
+           box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /* Add shadow */
+           display: block;
+           margin: auto;
+}
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #e7e9eb;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            line-height: 1.5;
+            letter-spacing: 1.2;
+        }
+        .card {
+            background: #e3e3e3;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 10px 0;
+            line-height: 1.5;
+        }
+        .chart {
+            margin-top: 20px;
+        }
+       
+
+                .analysis {
+            max-width: 900px;
+            margin: auto;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .analysis1 {
+            max-width: 900px;
+            margin: auto;
+            font-family: 'Poiret One';
+            padding: 20px;
+        }
+        .image:hover{
+            transform: scale(1.2);
+            transition: 0.5s;
+        }
+
+        .age-groups {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            /* grid-template-rows: repeat(2,1fr); */
+            gap: 20px; /* Adds spacing between each section */
+            list-style: none;
+            justify-content: space-between;
+            padding: 0;
+        }
+
+        .age-groups li {
+            flex: 1 1 calc(50% - 10px); /* Each item takes 50% width, minus gap */
+            box-sizing: border-box;
+}
+
+        .age-category {
+            display: flex;
+            flex-direction: column;
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            font-family: 'Poiret One';
+            line-height: 1.5;
+        }
+        .age-category:hover{
+            transform: scale(1.2);
+            transition: 0.5s;
+        }
+
+        .age-category h3 {
+            margin: 0;
+            color: #333;
+            padding-bottom: 20px;
+        }
+
+        .age-category ul {
+            padding-left: 20px;
+        }
+
+        .age-category p {
+            margin: 5px 0;
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">How Well Do You Really See?</h1>
+    <div class="container"><h3>
+        The eye is one of the most vital organs in the human body, allowing us to perceive the world, interpret colors, recognize faces, and navigate our surroundings. Good vision is essential for daily activities such as reading, driving, and working, making eye health a crucial aspect of overall well-being. However, many people tend to overlook eye care until they experience noticeable problems. Lack of awareness about common eye defects like myopia, hypermetropia, astigmatism, and other vision impairments can lead to late diagnosis and worsening conditions. Regular eye check-ups, proper nutrition, protective eyewear, and reducing screen time are key preventive measures to maintain healthy vision. Early detection of eye defects, especially in children and young adults, can help in timely correction and prevent complications.</h3>
+    </div>
+    <div class="container"><h3>As part of our Data Analytics and Visualization course, I conducted a survey to analyze different types of eye defects, their prevalence among genders, and the age at which they were diagnosed. The study helped in understanding patterns in eye health, which can be useful for early diagnosis and preventive measures.</h3></div>
+
+   
+    <div class="container">
+        <h1>Eye Defects Survey Insights</h1>
+        <div style="text-align: center;">Exploring the trends and patterns of eye defects based on survey data.</div>
+        
+        <div class="card">
+            <h2>Gender Distribution</h2>
+            <div style="background-color: #e3e3e3; text-align: center;"><h3>Understanding how eye defects vary across genders.</h3></div>
+            <div style="background-color: #e3e3e3; text-align: justify;">The gender distribution analysis provides insights into how eye defects vary across different genders. From the survey data, it is evident that males represent a slightly higher proportion of respondents diagnosed with eye defects compared to females.This variation could be influenced by genetic predisposition, environmental factors, or differences in healthcare access and awareness. Understanding these trends can help healthcare professionals and researchers develop targeted awareness campaigns and interventions to ensure early diagnosis and effective treatment strategies for all individuals, regardless of gender.</div>
+            <canvas id="genderChart" width="400" height="200"></canvas>
+        </div>
+
+        <div class="card">
+            <h2>Types of Eye Defects</h2>
+            <div style="background-color: #e3e3e3; text-align: center;">Analyzing the most common eye defects reported. </div>
+            
+            
+            <canvas id="defectChart" width="400" height="200"></canvas>
+            <ul>
+                <li>Myopia is the most common eye defect, reported by 51 out of 62 respondents (82%).</li>
+                <li>Other eye defects were reported by 6 respondents(which may include watery eyes,redness or no defect)</li>
+                <li>Hypermetropia was seen in 4 cases, while Astigmatism was the least common with only 1 case.</li>
+                <li>This indicates a strong prevalence of Myopia among the surveyed individuals.</li>
+            </ul>
+        </div>
+       
+
+        <div class="card">
+            <h2>Age of Diagnosis</h2>
+            <div style="background-color: #e3e3e3; text-align: center;">At what age are most people diagnosed with eye defects?</div>
+            <canvas id="ageChart" width="400" height="200"></canvas>
+            <ul>
+                <li>Most diagnoses happened between 11-15 years (29 cases, ~47%)</li>
+                <li>16-20 years was the second most common age group for diagnosis (22 cases, ~35%).</li>
+                <li>Younger diagnoses (5-10 years) were reported by 8 individuals, while only 3 cases were diagnosed at 21-25 years.</li>
+                <li>This suggests that most eye defects are detected during adolescence, especially between 11-15 years.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- <div class="analysis">
+        From the above Visualization, it can be concluded that age plays a crucial role in the development and progression of eye defects. The prevalence and type of eye defects vary across different age groups due to genetic, environmental, and lifestyle factors.
+        <ol>
+            <li>Childhood (0-10 years)</li>
+            <ul>
+                <li><b>Common Eye Defects: </b>Progressive Myopia, Hypermetropia (farsightedness), Astigmatism</li>
+                <li><b>Causes:</b></li>
+                <ul>
+                    
+                        
+
+                            <li> Genetic factors (if parents have vision problems)</li>
+                            
+                            <li>Excessive screen time and reduced outdoor activities</li>
+                            <li>Uncorrected refractive errors leading to long-term issues</li>
+                    
+                </ul>
+                <li><b>Impact:</b> Early diagnosis is critical as undetected issues can affect learning and development.
+                </li>
+            </ul>
+            <li>Adolescence (11-20 years)</li>
+            <ul>
+                <li><b>Common Eye Defects: </b>Progressive Myopia, Hypermetropia (farsightedness), Astigmatism</li>
+                <li><b>Causes:</b></li>
+                <ul>
+                    
+                        
+
+                            <li> Increased screen exposure (phones, computers, gaming)</li>
+                            
+                            <li>Prolonged reading and studying with poor lighting</li>
+                            <li>Hormonal changes affecting vision stability</li>
+                    
+                </ul>
+                <li><b>Impact:</b> Myopia progression is rapid in this stage, and corrective measures like glasses or contact lenses are often needed.
+                </li>
+            </ul>
+            <li>Young Adults (21-30 years)</li>
+            <ul>
+                <li><b>Common Eye Defects: </b>Digital Eye Strain, Dry Eyes, Contact Lens-Induced Irritations</li>
+                <li><b>Causes:</b></li>
+                <ul>
+                    
+                        
+
+                            <li> Long hours on digital screens (work, social media)
+                            </li>
+                            
+                            <li>Decreased blinking and poor eye hydration</li>
+                            <li>Poor diet lacking essential eye nutrients (Vitamin A, Omega-3)
+                            </li>
+                    
+                </ul>
+                <li><b>Impact:</b> Frequent headaches, blurred vision, and eye fatigue are common. Preventive measures like the 20-20-20 rule (looking away every 20 minutes for 20 seconds at something 20 feet away) help reduce strain..
+                </li>
+            </ul>
+            <li>Middle Age (30-50 years)
+            </li>
+            <ul>
+                <li><b>Common Eye Defects: </b>Presbyopia (difficulty focusing on near objects), Early Cataracts, Increased Astigmatism</li>
+                <li><b>Causes:</b></li>
+                <ul>
+                    
+                        
+
+                            <li> Age-related loss of lens flexibility</li>
+                            
+                            <li>Uncontrolled diabetes or hypertension</li>
+                            <li>UV exposure and oxidative stress</li>
+                    
+                </ul>
+                <li><b>Impact:</b> Reading glasses or bifocals are often needed; regular check-ups help detect cataracts early.
+                </li>
+            </ul>
+
+            <li>Older Adults (50+ years)
+            </li>
+            <ul>
+                <li><b>Common Eye Defects: </b>Cataracts, Glaucoma, Age-Related Macular Degeneration (AMD)</li>
+                <li><b>Causes:</b></li>
+                <ul>
+                    
+                        
+
+                            <li> Natural aging of eye structures
+                            </li>
+                            
+                            <li>UIncreased intraocular pressure (glaucoma risk)</li>
+                            <li>Retinal deterioration due to oxidative damage</li>
+                    
+                </ul>
+                <li><b>Impact:</b> Vision loss can become permanent if untreated. Regular eye screenings, a healthy diet, and proper eye care are essential.
+
+                </li>
+            </ul>
+
+        </ol>
+    
+
+    </div> -->
+
+    
+        <p style="font-family: 'Poiret One'; margin-left:250px; margin-right: 250px;background-color: #b8bcb3; line-height: 1.5;">
+            From the above visualization, it can be concluded that age plays a crucial role in the development and progression of eye defects. The prevalence and type of eye defects vary across different age groups due to genetic, environmental, and lifestyle factors.
+        </p>
+        <div class="analysis">
+        <ol class="age-groups">
+            <li>
+                <div class="age-category">
+                    <h3><strong>Childhood (0-10 years)</strong></h3>
+                    <p><b>Common Eye Defects:</b> Progressive Myopia, Hypermetropia (farsightedness), Astigmatism</p>
+                    <p><b>Causes:</b></p>
+                    <ul>
+                        <li>Genetic factors (if parents have vision problems)</li>
+                        <li>Excessive screen time and reduced outdoor activities</li>
+                        <li>Uncorrected refractive errors leading to long-term issues</li>
+                    </ul>
+                    <p><b>Impact:</b> Early diagnosis is critical as undetected issues can affect learning and development.</p>
+                </div>
+            </li>
+    
+            <li>
+                <div class="age-category">
+                    <h3><strong>Adolescence (11-20 years)</strong></h3>
+                    <p><b>Common Eye Defects:</b> Progressive Myopia, Hypermetropia (farsightedness), Astigmatism</p>
+                    <p><b>Causes:</b></p>
+                    <ul>
+                        <li>Increased screen exposure (phones, computers, gaming)</li>
+                        <li>Prolonged reading and studying with poor lighting</li>
+                        <li>Hormonal changes affecting vision stability</li>
+                    </ul>
+                    <p><b>Impact:</b> Myopia progression is rapid in this stage, and corrective measures are often needed.</p>
+                </div>
+            </li>
+    
+            <li>
+                <div class="age-category">
+                    <h3><strong>Young Adults (21-30 years)</strong></h3>
+                    <p><b>Common Eye Defects:</b> Digital Eye Strain, Dry Eyes, Contact Lens-Induced Irritations</p>
+                    <p><b>Causes:</b></p>
+                    <ul>
+                        <li>Long hours on digital screens (work, social media)</li>
+                        <li>Decreased blinking and poor eye hydration</li>
+                        <li>Poor diet lacking essential eye nutrients</li>
+                    </ul>
+                    <p><b>Impact:</b> Frequent headaches, blurred vision, and eye fatigue are common. Preventive measures help reduce strain.</p>
+                </div>
+            </li>
+    
+            <li>
+                <div class="age-category">
+                    <h3><strong>Middle Age and Above</strong></h3>
+                    <p><b>Common Eye Defects:</b> Presbyopia, Cataracts, Increased Astigmatism</p>
+                    <p><b>Causes:</b></p>
+                    <ul>
+                        <li>Age-related loss of lens flexibility</li>
+                        <li>Uncontrolled diabetes or hypertension</li>
+                        <li>Natural aging of eye structure</li>
+                    </ul>
+                    <p><b>Impact:</b> Reading glasses or bifocals are often needed; regular check-ups help detect cataracts early.</p>
+                </div>
+            </li>
+    
+            <!-- <li>
+                <div class="age-category">
+                    <h3>Older Adults (50+ years)</h3>
+                    <p><b>Common Eye Defects:</b> Cataracts, Glaucoma, Age-Related Macular Degeneration (AMD)</p>
+                    <p><b>Causes:</b></p>
+                    <ul>
+                        <li>Natural aging of eye structures</li>
+                        <li>Increased intraocular pressure (glaucoma risk)</li>
+                        <li>Retinal deterioration due to oxidative damage</li>
+                    </ul>
+                    <p><b>Impact:</b> Vision loss can become permanent if untreated. Regular eye screenings, a healthy diet, and proper eye care are essential.</p>
+                </div>
+            </li> -->
+        </ol>
+    </div>
+    
+
+    
+    <div class="analysis" style="font-family: 'Poiret One'; font-weight: bolder; line-height: 1.5;">Other than Age, Gender also affects the vision of a person. Studies suggest that myopia (nearsightedness) is slightly more common in females than in males,because Women have shorter axial lengths (eye shape), which may contribute to a higher risk of refractive errors.
+    Hypermetropia (farsightedness) occurs equally in both genders.Women experience more dry eyes and vision fluctuations due to hormonal changes.
+
+    </div>
+
+    <img  class ="image" src="SS.jpeg" alt="differences">
+
+    <div class="container" style="font-family: 'Poiret One'; line-height: 1.5;">The survey on eye defects provided valuable insights into the prevalence of different vision impairments across various age groups and genders. The findings highlight that myopia (nearsightedness) is the most common eye defect, affecting a significant portion of respondents. The analysis also revealed that age plays a crucial role in the onset of vision problems, with most diagnoses occurring during adolescence and early adulthood. Additionally, gender differences were observed, with females being more prone to dry eye syndrome and cataracts, while males had a slightly higher risk of myopia and eye injuries.
+
+        These results emphasize the importance of regular eye check-ups, early diagnosis, and preventive measures such as proper screen time management, UV protection, and a balanced diet to maintain healthy vision. Raising awareness about eye health can help individuals take proactive steps to prevent long-term complications.
+        
+        </div>
+
+        <h2 style="text-align: center;background-color: white;max-width: 800px;
+        margin: 50px auto;
+        padding: 20px;">-Teesha Ramchandani</h2>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        
+        const genderData = {
+            labels: ["Gender"], // Single category
+            datasets: [
+                {
+                    label: "Number of Males",
+                    data: [39], // Corrected value for males
+                    backgroundColor: "#3498db"
+                },
+                {
+                    label: "Number of Females",
+                    data: [23], 
+                    backgroundColor: "#e74c3c"
+                }
+            ]
+        };
+        const defectData = {
+            labels: ["Eye Defects"], // Single category
+            datasets: [
+                {
+                    label: "Myopia",
+                    data: [51], // Corrected value for Myopia
+                    backgroundColor: "#1abc9c"
+                },
+                {
+                    label: "Hypermetropia",
+                    data: [4], // Corrected value for Hypermetropia
+                    backgroundColor: "#f39c12"
+                },
+                {
+                    label: "Astigmatism",
+                    data: [1], // Corrected value for Astigmatism
+                    backgroundColor: "#8e44ad"
+                },
+                {
+                    label: "Others",
+                    data: [6], // Corrected value for Other defects
+                    backgroundColor: "#2c3e50"
+                }
+            ]
+        };
+
+        const ageDiagnosisData = {
+            labels: ["Age Groups"], // Single category
+            datasets: [
+                {
+                    label: "0-10 years",
+                    data: [8], // Corrected value for 0-10 years
+                    backgroundColor: "#2ecc71"
+                },
+                {
+                    label: "11-15 years",
+                    data: [29], // Corrected value for 11-15 years
+                    backgroundColor: "#e74c3c"
+                },
+                {
+                    label: "16-20 years",
+                    data: [22], // Corrected value for 16-20 years
+                    backgroundColor: "#3498db"
+                },
+                {
+                    label: "21-25 years",
+                    data: [3], // Corrected value for 21-25 years
+                    backgroundColor: "#9b59b6"
+                }
+            ]
+        };
+
+        function renderChart(canvasId, data) {
+            new Chart(document.getElementById(canvasId), {
+                type: "bar",
+                data: data,
+            });
+        }
+
+        renderChart("genderChart", genderData);
+        renderChart("defectChart", defectData);
+        renderChart("ageChart", ageDiagnosisData);
+    </script>
+</body>
+</html>
